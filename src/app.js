@@ -14,4 +14,12 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}));//Parses form data (fr
 app.use(express.static("public"))//Serves static files (like images, CSS, JS, PDFs, etc.) directly from the public folder.
 app.use(cookieParser())
 
+
+//routes import
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+app.use("/api/v1/users",userRouter)
+
+
 export {app};
